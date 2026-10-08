@@ -1,25 +1,25 @@
-// swift-tools-version: 5.9
+// swift-tools-version: 6.0
 import PackageDescription
 
 let package = Package(
     name: "Adfurikun-SPM-AppLovin",
     platforms: [.iOS(.v13)],
     products: [
-        .library(name: "AdfurikunAppLovin", targets: ["AdfurikunAppLovin"])
+        .library(name: "AdfurikunAppLovin", targets: ["AdfurikunAppLovinTarget"])
     ],
     dependencies: [
         .package(
             url: "https://github.com/glossom-dev/Adfurikun-SPM-Core.git",
-            exact: "4.4.0"
+            exact: "4.5.0-alpha.1"
         ),
         .package(
             url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package.git",
-            exact: "13.5.1"
+            exact: "13.6.4"
         ),
     ],
     targets: [
         .target(
-            name: "AdfurikunAppLovin",
+            name: "AdfurikunAppLovinTarget",
             dependencies: [
                 .product(name: "AdfurikunSDK", package: "Adfurikun-SPM-Core"),
                 .product(name: "AppLovinSDK", package: "AppLovin-MAX-Swift-Package")
